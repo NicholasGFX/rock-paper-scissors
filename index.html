@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <button onclick="play('rock')" id="rock">rock</button>
+    <button onclick="play('paper')" id="paper">paper</button>
+    <button onclick="play('scissors')" id="scissors">scissors</button>
+
+    <script>
+        //set it up so a user's input is passed along based on them clicking one of three buttons on the web page.
+        let computerSelection = Math.floor(Math.random(3) * Math.floor(3))
+        //generate random computer selection of rock, paper, or scissors.
+        function getComputerSelection() {
+            switch (computerSelection) {
+                case 0:
+                    computerSelection = "rock";
+                    break;
+                case 1:
+                    computerSelection = "paper";
+                    break;
+                case 2:
+                    computerSelection = "scissors";
+            }
+            return computerSelection;
+        }
+
+        function play(userSelection) {
+            getComputerSelection();
+            //compare what the computer chose to what the user chose.
+           //output a win, loss, or draw message based on the result.
+            if (userSelection === 'rock') {
+                if (computerSelection === 'rock') return alert('draw');
+                else if (computerSelection === 'paper') return alert('loss');
+                else return alert('win');
+            } else if (userSelection === 'paper') {
+                if (computerSelection === 'rock') return alert('win');
+                else if (computerSelection === 'paper') return alert('draw');
+                else return alert('loss');
+            } else {
+                if (computerSelection === 'rock') return alert('loss');
+                else if (computerSelection === 'paper') return alert('win');
+                else return alert('draw');
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
